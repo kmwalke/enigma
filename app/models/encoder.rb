@@ -1,4 +1,4 @@
-class Encoder
+module Encoder
   def encode(message)
     message
   end
