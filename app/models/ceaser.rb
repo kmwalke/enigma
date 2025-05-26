@@ -1,7 +1,7 @@
 class Ceaser < ApplicationRecord
   include Encoder
   FORWARD = 1
-  BACK = -1
+  BACK    = -1
 
   def encode(message)
     adjust_chars(message, FORWARD)
