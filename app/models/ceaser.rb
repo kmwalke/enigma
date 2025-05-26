@@ -14,20 +14,10 @@ class Ceaser < ApplicationRecord
   private
 
   def adjust_chars(message, direction)
+    shift_amount = shift * direction
+
     message.chars.map do |c|
-      if direction < 0
-        decrement_char(c)
-      elsif direction > 0
-        increment_char(c)
-      end
+      (c.ord + shift_amount).chr
     end.join.to_s
-  end
-
-  def increment_char(c)
-    (c.ord + shift).chr
-  end
-
-  def decrement_char(c)
-    (c.ord - shift).chr
   end
 end
