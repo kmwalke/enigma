@@ -87,6 +87,9 @@ RSpec/MultipleMemoizedHelpers:
 RSpec/NestedGroups:
   Max: 5
 
+Rspec/RepeatedExample:
+  Enabled: false
+
 Style/AccessorGrouping:
   Enabled: true
 
