@@ -15,7 +15,7 @@ RSpec.describe Ceaser, type: :model do
     expect(ceaser13.decode(encoded_message13)).to eq(message)
   end
 
-  it 'properly encodes a message', skip: 'string encoding issue' do
+  it 'properly encodes a message', skip: 'string encoding issue (spec only)' do
     expect(ceaser13.encode(message)).to eq('z\x86-zr\x80\x80ntr')
   end
 
