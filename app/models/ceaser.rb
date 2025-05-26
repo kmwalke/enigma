@@ -18,6 +18,6 @@ class Ceaser < ApplicationRecord
 
     message.chars.map do |c|
       (c.ord + shift_amount).chr
-    end.join.to_s
+    end.join
   end
 end
