@@ -5,7 +5,7 @@ class MockEncoder
 end
 
 RSpec.describe Encoder, type: :module do
-  let(:encoder) { MockEncoder.new }
+  let(:ceaser13) { MockEncoder.new }
   let(:message) { 'my message' }
 
   it 'encodes a message' do
