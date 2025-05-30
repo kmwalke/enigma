@@ -1,0 +1,17 @@
+<%= form_with(model: ceaser) do |form| %>
+  <% if ceaser.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(ceaser.errors.count, "error") %> prohibited this ceaser from being saved:</h2>
+
+      <ul>
+        <% ceaser.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>
