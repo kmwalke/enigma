@@ -11,6 +11,11 @@
     </div>
   <% end %>
 
+  <div class="field">
+    <%= form.label :shift, autofocus: 'autofocus' %>
+    <%= form.number_field :shift %>
+  </div>
+
   <div>
     <%= form.submit %>
   </div>
