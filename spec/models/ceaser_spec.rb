@@ -24,11 +24,11 @@ RSpec.describe Ceaser, type: :model do
   end
 
   it 'handles nil encode inputs' do
-    expect(ceaser13.encode()).to eq(nil)
+    expect(ceaser13.encode(nil)).to be_nil
   end
 
   it 'handles nil decode inputs' do
-    expect(ceaser13.decode()).to eq(nil)
+    expect(ceaser13.decode(nil)).to be_nil
   end
 
   private

@@ -17,10 +17,10 @@ RSpec.describe Encoder, type: :module do
   end
 
   it 'handles nil encode inputs' do
-    expect(encoder.encode()).to eq(nil)
+    expect(encoder.encode(nil)).to be_nil
   end
 
   it 'handles nil decode inputs' do
-    expect(encoder.decode()).to eq(nil)
+    expect(encoder.decode(nil)).to be_nil
   end
 end

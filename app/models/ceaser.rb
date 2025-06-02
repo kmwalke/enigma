@@ -4,10 +4,14 @@ class Ceaser < ApplicationRecord
   BACK    = -1
 
   def encode(message)
+    return if message.nil?
+
     adjust_chars(message, FORWARD)
   end
 
   def decode(message)
+    return if message.nil?
+
     adjust_chars(message, BACK)
   end
 
