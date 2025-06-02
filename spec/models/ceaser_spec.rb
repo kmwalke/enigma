@@ -23,6 +23,14 @@ RSpec.describe Ceaser, type: :model do
     expect(ceaser13.decode(encoded_message13)).to eq(message)
   end
 
+  it 'handles nil encode inputs' do
+    expect(ceaser13.encode()).to eq(nil)
+  end
+
+  it 'handles nil decode inputs' do
+    expect(ceaser13.decode()).to eq(nil)
+  end
+
   private
 
   def encode(message, shift)

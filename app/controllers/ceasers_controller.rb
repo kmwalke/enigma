@@ -1,5 +1,5 @@
 class CeasersController < ApplicationController
-  before_action :set_ceaser, only: [:show, :edit, :update, :destroy]
+  before_action :set_ceaser, only: [:show, :edit, :update, :destroy, :encode]
 
   # GET /ceasers
   def index
@@ -41,6 +41,10 @@ class CeasersController < ApplicationController
   def destroy
     @ceaser.destroy!
     redirect_to ceasers_path, notice: 'Ceaser was successfully destroyed.', status: :see_other
+  end
+
+  def encode
+    redirect_to @ceaser, notice: 'Encoded!', result: @ceaser.encode(ceaser_params[:message])
   end
 
   private

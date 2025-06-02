@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-  resources :ceasers
   root to: 'home#index'
+
+  resources :ceasers
+  post 'ceasers/:id/encode', to: 'ceasers#encode', as: 'encode_ceaser'
 end
