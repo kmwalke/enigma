@@ -8,7 +8,7 @@ class CeasersController < ApplicationController
 
   # GET /ceasers/1
   def show
-    Rails.logger.warn 'PARAMS: ' + params.to_s
+    Rails.logger.warn "PARAMS: #{params}"
     @encoded_message = flash[:result]
   end
 

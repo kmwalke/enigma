@@ -37,7 +37,7 @@ RSpec.feature 'Ceasers', type: :feature do
       # Preferably the same chars that the enigma used
       # Instead of just adding a ruby int to a ruby char, access the index+encoding_value position of the encoding map
       # This would just be an array of all allowable characters, overflows loop to the begining
-      expect(true).to eq(false)
+      expect(true).to be(false)
     end
   end
 end
