@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.feature 'Ceasers', type: :feature do
+RSpec.feature 'Ceasers' do
   let!(:ceaser3) { Ceaser.create(shift: 3) }
 
   it 'displays the ceaser page' do

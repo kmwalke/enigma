@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe Ceaser, type: :model do
+RSpec.describe Ceaser do
   let(:ceaser13) { described_class.new(shift: 13) }
   let(:ceaser_neg8) { described_class.new(shift: -8) }
   let(:message) { 'my message' }
