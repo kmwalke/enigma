@@ -38,6 +38,17 @@ RSpec.feature 'Ceasers' do
       # Preferably the same chars that the enigma used
       # Instead of just adding a ruby int to a ruby char, access the index+encoding_value position of the encoding map
       # This would just be an array of all allowable characters, overflows loop to the begining
+      # Use a class, CharacterMap or something, that all encoders can use
+      # CharacterMap.characters = [a,b,c,d,...]
+      # use two hashes to encode/decode
+      # hash_1 = {a:1, b:2, etc} hash_2 = {1:a, 2:b, etc}
+      #   I guess automap this against the allowable characters defined above?
+      #   Is there an easy "hash.reverse" method that exchanges keys and values?  So I can change one and auto change the other?
+      # one is encoder hash, one is decoder hash
+      # 'message" comes in, combine the two to encode
+      # 'message'.chars.each do |c|
+      #    hash_2[hash_1[c]+shift] // don't forget that overflows roll over somehow
+      # end.merge
       expect(true).to be(false)
     end
   end
