@@ -1,17 +1,17 @@
 <p style="color: green"><%= notice %></p>
 
-<label>
-  <span>Input</span>
-  <br/>
-  <textarea cols="100" rows="8">The quick red fox jumps over the lazy, brown dog.</textarea>
-</label>
-
-<%= button_to 'Encode', encode_ceaser_path(@ceaser) %>
+<%= form_with url: "/ceasers/#{@ceaser.id}/encode", method: :post do |form| %>
+  <%= form.label :message %>
+  <br />
+  <%= form.text_area :message, cols: 100, rows: 8, value: 'The quick red fox jumped over the lazy, brown dog.' %>
+  <br />
+  <%= form.submit 'Encode' %>
+<% end %>
 
 <label>
   <span>Output</span>
   <br/>
-  <textarea cols="100" rows="8"></textarea>
+  <textarea cols="100" rows="8"><%= @encoded_message %></textarea>
 </label>
 
 <div>

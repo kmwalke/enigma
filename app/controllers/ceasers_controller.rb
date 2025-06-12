@@ -7,7 +7,10 @@ class CeasersController < ApplicationController
   end
 
   # GET /ceasers/1
-  def show; end
+  def show
+    Rails.logger.warn 'PARAMS: ' + params.to_s
+    @encoded_message = flash[:result]
+  end
 
   # GET /ceasers/new
   def new
@@ -44,7 +47,7 @@ class CeasersController < ApplicationController
   end
 
   def encode
-    redirect_to @ceaser, notice: 'Encoded!', result: @ceaser.encode(ceaser_params[:message])
+    redirect_to @ceaser, notice: 'Encoded!', flash: { result: @ceaser.encode(params[:message]) }
   end
 
   private
@@ -56,6 +59,6 @@ class CeasersController < ApplicationController
 
   # Only allow a list of trusted parameters through.
   def ceaser_params
-    params.fetch(:ceaser, {}).permit(:shift)
+    params.fetch(:ceaser, {}).permit(:shift, :message)
   end
 end

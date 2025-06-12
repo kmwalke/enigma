@@ -15,7 +15,7 @@ RSpec.feature 'Ceasers', type: :feature do
     before do
       visit ceaser_path(ceaser3)
 
-      fill_in 'Input', with: message
+      fill_in 'Message', with: message
       click_button 'Encode'
     end
 
@@ -25,6 +25,19 @@ RSpec.feature 'Ceasers', type: :feature do
 
     it 'displays the encoded message' do
       expect(page).to have_content(ceaser3.encode(message))
+    end
+
+    it 'encodes using an encoder map' do
+      # Just adding a number to all allowed ruby chars is causing issues
+      # 2] pry(main)> c.encode 'The quick red fox jumped over the lazy, brown dog.'
+      # => "]qn)z~rlt){nm)ox\x81)s~vynm)x\x7Fn{)}qn)uj\x83\x825)k{x\x80w)mxp7"
+      # the \x81 and \x7 s, etc are causing problems.
+      # Create an encoder map
+      # This would be an array of allowed chars
+      # Preferably the same chars that the enigma used
+      # Instead of just adding a ruby int to a ruby char, access the index+encoding_value position of the encoding map
+      # This would just be an array of all allowable characters, overflows loop to the begining
+      expect(true).to eq(false)
     end
   end
 end
