@@ -21,7 +21,11 @@ class Ceaser < ApplicationRecord
     shift_amount = shift * direction
 
     message.chars.map do |c|
-      (c.ord + shift_amount).chr
+      CharacterMap.decode(index(CharacterMap.encode(c) + shift_amount))
     end.join
+  end
+
+  def index(number)
+    number % CharacterMap.allowed_characters_count
   end
 end

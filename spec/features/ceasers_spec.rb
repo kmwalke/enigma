@@ -52,9 +52,12 @@ RSpec.feature 'Ceasers' do
       # Random Ceaser (Enigma wheels) could use a third hash that maps two numbers together
       #   {1:4, 12:2, etc} for all combos up to 26
       #   use this mapping instead of adding 'shift" to the char
-      
+
       # In the future, I GUESS, if there is a way to convert all unicode into intergers (which is certainly doable), this is extendable to all unicode
       #   This sounds like a pain in the ass, though
+
+      # TODO: The above has been done, yay!  Add Error handling for chars outside of allowed list
+      # TODO: Add Testing for new CharacterMap class
       expect(true).to be(false)
     end
   end
