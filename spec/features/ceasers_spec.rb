@@ -28,8 +28,6 @@ RSpec.feature 'Ceasers' do
     end
 
     it 'encodes using an encoder map' do
-      # TODO: The above has been done, yay!  Add Error handling for chars outside of allowed list
-      # TODO: Add Testing for new CharacterMap class
       expect(true).to be(false)
     end
   end

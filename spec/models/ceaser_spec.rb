@@ -24,14 +24,14 @@ RSpec.describe Ceaser do
   end
 
   it 'handles nil encode inputs' do
-    expect(ceaser13.encode(nil)).to be_nil
+    expect(ceaser13.encode(nil)).to eq('INVALID MESSAGE')
   end
 
   it 'handles nil decode inputs' do
-    expect(ceaser13.decode(nil)).to be_nil
+    expect(ceaser13.decode(nil)).to eq('INVALID MESSAGE')
   end
 
   it 'handles bad characters' do
-    expect(ceaser13.encode('bad_message!@#$%^&*()_+')).to be_nil
+    expect(ceaser13.encode('bad_message!@#$%^&*()_+')).to eq('INVALID MESSAGE')
   end
 end
