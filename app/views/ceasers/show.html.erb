@@ -3,7 +3,7 @@
 <%= form_with url: "/ceasers/#{@ceaser.id}/encode", method: :post do |form| %>
   <%= form.label :message %>
   <br />
-  <%= form.text_area :message, cols: 100, rows: 8, value: 'The quick red fox jumped over the lazy, brown dog.' %>
+  <%= form.text_area :message, cols: 100, rows: 8, value: 'The quick red fox jumped over the lazy brown dog' %>
   <br />
   <%= form.submit 'Encode' %>
 <% end %>
