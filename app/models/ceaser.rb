@@ -4,18 +4,28 @@ class Ceaser < ApplicationRecord
   BACK    = -1
 
   def encode(message)
-    return if message.nil?
+    return unless valid(message)
 
     adjust_chars(message, FORWARD)
   end
 
   def decode(message)
-    return if message.nil?
+    return unless valid(message)
 
     adjust_chars(message, BACK)
   end
 
   private
+
+  def valid(message)
+    return false if message.nil?
+
+    message.chars.each do |c|
+      return false unless CharacterMap::DECODE_LIST.include?(c)
+    end
+
+    true
+  end
 
   def adjust_chars(message, direction)
     shift_amount = shift * direction

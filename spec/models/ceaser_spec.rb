@@ -4,8 +4,8 @@ RSpec.describe Ceaser do
   let(:ceaser13) { described_class.new(shift: 13) }
   let(:ceaser_neg8) { described_class.new(shift: -8) }
   let(:message) { 'my message' }
-  let(:encoded_message13) { encode(message, ceaser13.shift) }
-  let(:encoded_message_neg8) { encode(message, ceaser_neg8.shift) }
+  let(:encoded_message13) { ceaser13.encode(message) }
+  let(:encoded_message_neg8) { ceaser_neg8.encode(message) }
 
   it 'encodes a message' do
     expect(ceaser13.encode(message)).not_to eq(message)
@@ -31,11 +31,7 @@ RSpec.describe Ceaser do
     expect(ceaser13.decode(nil)).to be_nil
   end
 
-  private
-
-  def encode(message, shift)
-    message.chars.map do |c|
-      (c.ord + shift).chr
-    end.join
+  it 'handles bad characters' do
+    expect(ceaser13.encode('bad_message!@#$%^&*()_+')).to be_nil
   end
 end
